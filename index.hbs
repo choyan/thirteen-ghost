@@ -1,0 +1,38 @@
+{{!< default}}
+{{> header}}
+<main role="main">
+	{{#foreach posts}}
+	<article role="article" itemscope itemtype="http://schema.org/Article" class="hentry">
+		<header class="entry-header">
+			<h1 class="entry-title" itemprop="headline">
+				<a href="{{{url}}}" rel="bookmark">
+					{{title}}
+				</a>
+			</h1>
+			<div class="entry-meta">
+				<span class="date">
+					<time class="entry-date"  datetime="{{date format="YYYY-MM-DD"}}" itemprop="datePublished">
+						{{date format='dddd DD MMM YYYY'}}
+					</time>
+				</span>
+				<span class="categories-links">
+					{{#if tags}}
+						Tags: {{tags separator=" | "}}
+					{{/if}}
+				</span>
+			</div><!-- .entry-meta -->
+		</header>
+		<div class="entry-content" itemprop="articleBody">
+			{{excerpt characters="80"}}
+		</div>
+	</article>
+	{{/foreach}}
+	{{#if pagination}}
+		<nav class="navigation paging-navigation">
+			<div class="nav-links">
+				{{{pagination}}}
+			</div>
+		</nav>
+	{{/if}}
+</main>
+{{> footer}}

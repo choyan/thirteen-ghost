@@ -1,0 +1,36 @@
+{{!< default}}
+{{> header}}
+<main role="main">
+	{{#post}}
+	<article role="article" itemscope itemtype="http://schema.org/Article">
+		<header class="entry-header">
+			<h1 class="entry-title" itemprop="headline">
+				{{title}}
+			</h1>
+			<div class="entry-meta">
+				<span class="date">
+					<time class="entry-date"  datetime="{{date format="YYYY-MM-DD"}}" itemprop="datePublished">
+						<a href="">{{date format='dddd DD MMM YYYY'}}</a>
+					</time>
+				</span>
+				<span class="categories-links">
+					{{#if tags}}
+						Tags: {{tags separator=" | "}}
+					{{/if}}
+				</span>
+			</div><!-- .entry-meta -->
+		</header>
+		<div class="entry-content" itemprop="articleBody">
+			{{content}}
+		</div>
+	</article>
+	{{/post}}
+	{{#if pagination}}
+		<nav class="navigation paging-navigation">
+			<div class="nav-links">
+				{{{pagination}}}
+			</div>
+		</nav>
+	{{/if}}
+</main>
+{{> footer}}
