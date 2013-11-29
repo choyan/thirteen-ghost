@@ -11,7 +11,7 @@ A Ghost theme based on Popular wordpress theme Twenty-thirteen.
 ##Usage:
 - Download thirteen-ghost and place her inside /content/themes/
 - Restart your instance of ghost
-- Goto your blog settings and choose ellie from the themes dropdown.
+- Goto your blog settings and choose thirteen-ghost from the themes dropdown.
 
 
 ##License:
